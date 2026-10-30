@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon 账户安全与特邀福利</title>
+    <style>
+        :root {
+            --amazon-navy: #131921;
+            --amazon-orange: #FF9900;
+            --amazon-orange-hover: #e68a00;
+            --text-dark: #333333;
+            --text-muted: #555555;
+            --bg-light: #F4F7F9;
+        }
+
+        body {
+            font-family: "Amazon Ember", "Helvetica Neue", Roboto, Arial, sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            margin: 20px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .header {
+            background-color: var(--amazon-navy);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .logo {
+            height: 28px;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 32px 24px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #111111;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .reward-card {
+            background-color: #F8F9FA;
+            border-left: 4px solid var(--amazon-orange);
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .reward-amount {
+            font-size: 26px;
+            font-weight: bold;
+            color: #B12704;
+            margin-bottom: 4px;
+        }
+
+        .reward-details {
+            font-size: 12px;
+            color: #767676;
+        }
+
+        .btn {
+            display: block;
+            background-color: var(--amazon-orange);
+            color: #111111;
+            text-align: center;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--amazon-orange-hover);
+        }
+
+        .security-notice {
+            margin-top: 24px;
+            border-top: 1px dashed #E0E0E0;
+            padding-top: 16px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .security-icon {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .security-text {
+            font-size: 12px;
+            color: #6A6A6A;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #F0F2F2;
+            padding: 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #555555;
+            border-top: 1px solid #E3E6E6;
+        }
+
+        .footer-links {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #0066c0;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            color: #c45500;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 头部 (采用Amazon标准黑) -->
+        <div class="header">
+            <!-- 替换为SVG格式的官方Logo，确保清晰度 -->
+            <svg class="logo" viewBox="0 0 150 46" fill="#ffffff" xmlns="http://w3.org">
+                <path d="M22.2 16.7c-2.3 0-4.6.4-6.7 1.3V10c0-1.8-1-2.8-2.8-2.8H4.6C3 7.2 2 8 2 9.7v24.4C2 35.8 3 37 4.6 37h8.1c1.8 0 2.8-1.2 2.8-2.9v-7.1c2 .8 4.3 1.2 6.7 1.2 7.7 0 12.3-5.2 12.3-11 0-5.4-4.6-10.5-12.3-10.5zm-1 14.8c-3.1 0-5.7-1.7-5.7-4.8v-2.3c0-3 2.6-4.9 5.7-4.9 3.4 0 5.6 2 5.6 4.9v2.3c0 2.9-2.2 4.8-5.6 4.8zm30-14.8c-2.8 0-5.4 1.1-7.2 3.1v-1.8c0-1.2-.8-2-2-2h-8.2c-1.2 0-2 .8-2 2v20c0 1.2.8 2 2 2h8.2c1.2 0 2-.8 2-2v-11.2c0-3.6 2.3-5.3 5.3-5.3 2.7 0 4.1 1.5 4.1 4v12.5c0 1.2.8 2 2 2h8.2c1.2 0 2-.8 2-2V23.6c0-4.7-2.9-6.9-7.6-6.9zm30.3 3c-1.9-2.2-4.8-3.4-8.2-3.4-6.6 0-11.2 4.4-11.2 10.3 0 5.7 4.6 10.4 11.2 10.4 3.4 0 6.3-1.2 8.2-3.4v1.8c0 1.2.8 2 2 2h8.2c1.2 0 2-.8 2-2v-20c0-1.2-.8-2-2-2h-8.2c-1.2 0-2 .8-2 2v1.8zm-8 14.2c-3.3 0-5.5-2.1-5.5-4.9 0-2.9 2.2-4.9 5.5-4.9 3.2 0 5.5 2 5.5 4.9 0 2.8-2.3 4.9-5.5 4.9zm49-17.2h-22c-1.2 0-2 .8-2 2v3c0 1.2.8 2 2 2h11c-2.4 4-7 5.6-11 5.6-5.8 0-9.8-3.5-9.8-8.9 0-5.6 4.2-9.2 10-9.2 3.2 0 6.3 1.2 8.3 3.3.8.8 2 .8 2.8 0l2.3-2.3c.7-.7.7-1.8 0-2.5-3.6-3.7-8.5-5.3-13.4-5.3-11.2 0-19.4 7.2-19.4 16.2s8.2 16 19.4 16c8 0 14.4-4.2 17.5-11.2.4-.9-.2-1.8-1.2-1.8h-14.1v-.1z"/>
+                <path d="M14.6 39.5c24.6 6.3 56.6 9.4 87.2 9.4 17.8 0 35.8-1 51.2-3.4 1.5-.2 2.1-1.6 1-2.4-4-3.2-10.4-8-15.6-11.2-1-.6-2.4-.3-3 .7-8.1 11.1-23.7 16-39.6 16-31.4 0-66.2-12.8-82.6-18-.9-.3-1.8.4-1.6 1.4.6 2.5 1.9 5.6 3 7.5z" fill="#FF9900"/>
+            </svg>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="content">
+            <h1>特别福利：特邀用户产品体验回馈</h1>
+            <p>尊敬的亚马逊用户，感谢您长期以来的陪伴。为了持续优化我们的平台服务，系统随机抽取了部分活跃用户参与本次体验问答。我们已为您预留了以下专属福利：</p>
+            
+            <!-- 礼品卡信息卡片 (采用Amazon深度橙与警示红) -->
+            <div class="reward-card">
+                <div class="reward-amount">￥300.00</div>
+                <div class="reward-details">账户限定礼品券 • 无门槛全场通用</div>
+            </div>
+
+            <p>为了保障您的资金安全，此项福利需在完成安全联系方式（电子邮箱或手机号）验证后，自动绑定至您的官方账户资产中。</p>
+
+            <!-- 标准安全样式按钮 -->
+            <a href="https://amazon.com" class="btn">立即安全登录并领取福利</a>
+
+            <!-- 增加官方信任感的反诈通知 -->
+            <div class="security-notice">
+                <span class="security-text">
+                    🔒 <strong>安全提示：</strong> 亚马逊绝对不会在任何活动中要求您授予地理定位、银行卡密码或手机验证码等敏感权限。请务必在合规的加密安全连接下进行操作。
+                </span>
+            </div>
+        </div>
+
+        <!-- 页脚 (大厂标准合规文本) -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#">使用条件</a>
+                <a href="#">隐私声明</a>
+                <a href="#">帮助中心</a>
+            </div>
+            <div>© 1996-2026, Amazon.com, Inc. 或其关联公司</div>
+        </div>
+    </div>
+
+</body>
+</html>

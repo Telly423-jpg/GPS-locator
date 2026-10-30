@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Connections Near You</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .profile-container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            background-color: #ddd;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .status-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background-color: #4cd137;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .profile-info {
+            padding: 20px;
+        }
+
+        .profile-name-age {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2f3640;
+            margin-bottom: 5px;
+        }
+
+        .profile-location {
+            font-size: 0.95rem;
+            color: #718093;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .profile-bio {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .chat-box {
+            border-top: 1px solid #f1f2f6;
+            padding: 15px 20px;
+            background-color: #fafafa;
+        }
+
+        .message-history {
+            max-height: 150px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .message {
+            background-color: #e4e6eb;
+            padding: 8px 12px;
+            border-radius: 15px;
+            margin-bottom: 8px;
+            display: inline-block;
+            max-width: 85%;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ccd0d5;
+            border-radius: 20px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .chat-input:focus {
+            border-color: #0084ff;
+        }
+
+        .send-btn {
+            background-color: #0084ff;
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .send-btn:hover {
+            background-color: #006bce;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <!-- Profile Image Area -->
+        <div class="image-container">
+            <!-- Using a standard Unsplash placeholder image -->
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Profile Picture" class="profile-image">
+            <span class="status-badge">● Online Now</span>
+        </div>
+
+        <!-- Profile Details -->
+        <div class="profile-info">
+            <div class="profile-name-age">Chloe, 24</div>
+            <div class="profile-location">📍 Less than 2 miles away</div>
+            <p class="profile-bio">
+                Down-to-earth coffee lover, bookworm, and weekend hiker. Looking for someone to explore new spots around town with. Tell me your favorite cafe! ☕✨
+            </p>
+        </div>
+
+        <!-- Interactive Mock Chat Box -->
+        <div class="chat-box">
+            <div class="message-history" id="messageHistory">
+                <div class="message">Hey there! I'm around the neighborhood today. What are you up to?</div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="chatInput" class="chat-input" placeholder="Say something nice..." onkeypress="handleKeyPress(event)">
+                <button class="send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const history = document.getElementById('messageHistory');
+            
+            if (input.value.trim() !== '') {
+                // User Message
+                const userMsg = document.createElement('div');
+                userMsg.className = 'message';
+                userMsg.style.backgroundColor = '#0084ff';
+                userMsg.style.color = 'white';
+                userMsg.style.float = 'right';
+                userMsg.style.clear = 'both';
+                userMsg.style.borderRadius = '15px 15px 2px 15px';
+                userMsg.textContent = input.value;
+                history.appendChild(userMsg);
+                
+                const currentText = input.value;
+                input.value = '';
+                
+                // Auto-scroll
+                history.scrollTop = history.scrollHeight;
+
+                // Simulate a fast automatic response
+                setTimeout(() => {
+                    const replyMsg = document.createElement('div');
+                    replyMsg.className = 'message';
+                    replyMsg.style.clear = 'both';
+                    replyMsg.style.borderRadius = '15px 15px 15px 2px';
+                    replyMsg.textContent = "That sounds awesome! Tell me more? 😊";
+                    history.appendChild(replyMsg);
+                    history.scrollTop = history.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+
+</body>
+</html>

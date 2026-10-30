@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Map Interface</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, Arial, sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Map Container acting as the canvas background */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #e5e3df;
+            /* Grid background styling to simulate street/terrain grids */
+            background-image: 
+                linear-gradient(#ffffff 2px, transparent 2px),
+                linear-gradient(90deg, #ffffff 2px, transparent 2px);
+            background-size: 100px 100px;
+        }
+
+        /* Mock Search Widget floating on the top left */
+        .search-box {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 360px;
+            height: 48px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            z-index: 10;
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            color: #202124;
+        }
+
+        .search-icon {
+            color: #70757a;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        /* Mock Map Controls on the bottom right */
+        .map-controls {
+            position: absolute;
+            bottom: 30px;
+            right: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .control-btn:hover {
+            background-color: #f1f3f4;
+        }
+
+        /* Visual Pin Marker */
+        .map-marker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .pin-head {
+            width: 28px;
+            height: 28px;
+            background-color: #ea4335;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .pin-head::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
+            position: absolute;
+            border-radius: 50%;
+            top: 8px;
+            left: 8px;
+        }
+
+        .pin-shadow {
+            width: 10px;
+            height: 4px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="map-container">
+        <!-- Floating Google Maps style search box -->
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search Google Maps" value="1600 Amphitheatre Pkwy, Mountain View, CA">
+        </div>
+
+        <!-- Custom Map Marker Pin placed in the center -->
+        <div class="map-marker">
+            <div class="pin-head"></div>
+            <div class="pin-shadow"></div>
+        </div>
+
+        <!-- Zoom and utility buttons -->
+        <div class="map-controls">
+            <button class="control-btn">+</button>
+            <button class="control-btn">−</button>
+            <button class="control-btn" style="font-size: 14px;">🗺️</button>
+        </div>
+    </div>
+
+</body>
+</html>
