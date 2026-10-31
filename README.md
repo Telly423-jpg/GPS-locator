@@ -1,5 +1,6 @@
 # GPS-locator
 GPS-Locator is a powerful Python-based GPS tracking tool that captures exact coordinates of any device. It creates a convincing fake web page that automatically requests location access. Once the target grants permission, their precise location is captured and displayed on a real-time map.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3feb11ac-1881-4d9e-91a7-fbe8828cd6a2" />
 
 This project is a modified version based on the original HDN-Locator by HasnainDarkNet, following the MIT License. The html files in the repo are sample templates for custom use, google maps locator.py is the modified and ready-to-run script, you just need to open locator.py, replace the original html with the other local html files path in this repository, save and run it.
 <img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/244caf91-9207-4926-b520-6362ae851394" /> 
